@@ -7,6 +7,6 @@
 </head>
 <body>
 	<h1>HelloWorld</h1>	
-	<img src=''/>
+	<img src='cute.jpg'/>
 </body>
 </html>
