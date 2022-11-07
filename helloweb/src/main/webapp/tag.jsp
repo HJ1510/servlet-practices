@@ -48,7 +48,9 @@
 		문장입니다!<br/>
 	</p>
 	
-	<a href="hello.jsp">hello로 가기</a> <!-- 상대경로 -->
+	<a href="hello.jsp?name=윤현정">hello로 가기1</a> <!-- 상대경로 -->
+	<br/>
+	<a href="/helloweb/hello?name=윤현정">hello로 가기2</a> <!-- 상대경로 --> <!-- doGet 호출 -->
 	<br/>
 	<a href="form.jsp">폼으로 가기</a> 
 
