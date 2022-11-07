@@ -1,6 +1,6 @@
 package com.bitacademy.guestbook01.vo;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class Guestbook01Vo {
 	private int no;
@@ -48,8 +48,6 @@ public class Guestbook01Vo {
 	public void setRegDate(Date regDate) {
 		this.regDate = regDate;
 	}
-
-	
 
 	@Override
 	public String toString() {

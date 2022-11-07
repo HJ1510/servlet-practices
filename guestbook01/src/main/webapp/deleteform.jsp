@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%
 	String no = request.getParameter("no");
+	
 %>
 <html>
 <head>
@@ -10,7 +11,7 @@
 </head>
 <body>
 	<form method="post" action="delete.jsp">
-		<input type='hidden' name="no" value="2"<%=no %>>
+		<input type='hidden' name="no" value="<%=no %>">
 		<table>
 			<tr>
 				<td>비밀번호</td>
