@@ -17,15 +17,3 @@
 	response.sendRedirect("/emaillist01");
 	
 %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-<h1>성공적으로 등록되었습니다.</h1>
-
-
-</body>
-</html>
