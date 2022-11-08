@@ -10,24 +10,13 @@
 	String name = request.getParameter("name");
 	String password = request.getParameter("password");
 	String message = request.getParameter("message");
-	Calendar calendar = Calendar.getInstance();
-	SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
 
 	Guestbook01Vo vo = new Guestbook01Vo();
 	vo.setName(name);
 	vo.setPassword(password);
 	vo.setContents(message);
-	vo.setRegDate(calendar.getTime());
 	new Guestbook01Dao().insert(vo);
 
-	response.sendRedirect("/guestbook01");
+	response.sendRedirect("/guestbook01"); 
 %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-</body>
-</html>
+<!-- Redirect 응답은 html 필요없음 -->

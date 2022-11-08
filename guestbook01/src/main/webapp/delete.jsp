@@ -6,17 +6,7 @@
 	request.setCharacterEncoding("utf-8");
 	String password = request.getParameter("password");
 	int no=Integer.parseInt(request.getParameter("no"));
-	new Guestbook01Dao().deleteGuestbook(password);
+	new Guestbook01Dao().deleteGuestbook(password,no);
 	
 	response.sendRedirect("/guestbook01");
 	%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
-</html>

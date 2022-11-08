@@ -1,13 +1,16 @@
 package com.bitacademy.guestbook01.vo;
 
-import java.util.Date;
-
 public class Guestbook01Vo {
 	private int no;
 	private String name;
 	private String password;
 	private String contents;
-	private Date regDate;
+//	private Date regDate;
+	private String regDate;
+
+	public void setRegDate(String regDate) {
+		this.regDate = regDate;
+	}
 
 	public int getNo() {
 		return no;
@@ -41,12 +44,8 @@ public class Guestbook01Vo {
 		this.contents = contents;
 	}
 
-	public Date getRegDate() {
+	public String getRegDate() {
 		return regDate;
-	}
-
-	public void setRegDate(Date regDate) {
-		this.regDate = regDate;
 	}
 
 	@Override
@@ -54,5 +53,7 @@ public class Guestbook01Vo {
 		return "Guestbook01Vo [no=" + no + ", name=" + name + ", password=" + password + ", contents=" + contents
 				+ ", regDate=" + regDate + "]";
 	}
+
+
 
 }
