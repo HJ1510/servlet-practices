@@ -19,11 +19,7 @@ public class Guestbook01Dao {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		try {
-			Class.forName("org.mariadb.jdbc.Driver");
-
-			String url = "jdbc:mysql://127.0.0.1:3306/webdb?charset=utf8";
-			conn = DriverManager.getConnection(url, "webdb", "webdb");
-
+			conn = getConnection();
 			String sql = "select no, name, contents, reg_date  from guestbook order by reg_date desc";
 			pstmt = conn.prepareStatement(sql);
 
@@ -45,8 +41,6 @@ public class Guestbook01Dao {
 				result.add(vo);
 			}
 
-		} catch (ClassNotFoundException e) {
-			System.out.println("드라이버 로딩 실패 : " + e);
 		} catch (SQLException e) {
 			System.out.println("Error : " + e);
 		} finally {
@@ -75,10 +69,7 @@ public class Guestbook01Dao {
 		PreparedStatement pstmt = null;
 
 		try {
-			Class.forName("org.mariadb.jdbc.Driver");
-
-			String url = "jdbc:mysql://127.0.0.1:3306/webdb?charset=utf8";
-			conn = DriverManager.getConnection(url, "webdb", "webdb");
+			conn = getConnection();
 
 			String sql = "insert into guestbook values(null, ?, ?, ?, now())";
 			pstmt = conn.prepareStatement(sql);
@@ -92,9 +83,7 @@ public class Guestbook01Dao {
 
 			result = count == 1;
 
-		} catch (ClassNotFoundException e) {
-			System.out.println("드라이버 로딩 실패:" + e);
-		} catch (SQLException e) {
+		}  catch (SQLException e) {
 			System.out.println("Error:" + e);
 		} finally {
 			try {
@@ -120,10 +109,7 @@ public class Guestbook01Dao {
 		PreparedStatement pstmt = null;
 
 		try {
-			Class.forName("org.mariadb.jdbc.Driver");
-
-			String url = "jdbc:mysql://127.0.0.1:3306/webdb?charset=utf8";
-			conn = DriverManager.getConnection(url, "webdb", "webdb");
+			conn = getConnection();
 
 			String sql = "delete from guestbook where no = ? and password = ?";
 			pstmt = conn.prepareStatement(sql);
@@ -135,8 +121,6 @@ public class Guestbook01Dao {
 
 			result = count == 1;
 
-		} catch (ClassNotFoundException e) {
-			System.out.println("드라이버 로딩 실패 : " + e);
 		} catch (SQLException e) {
 			System.out.println("Error : " + e);
 		} finally {
@@ -154,10 +138,16 @@ public class Guestbook01Dao {
 		return result;
 
 	}
-	
+
 	private Connection getConnection() throws SQLException {
-		Connection conn=null;
-		
+		Connection conn = null;
+		try {
+			Class.forName("org.mariadb.jdbc.Driver");
+			String url = "jdbc:mysql://127.0.0.1:3306/webdb?charset=utf8"; // 마리아db에선 utf-8로 하면 오류! 뒤에 옵션은 추가 가능
+			conn = DriverManager.getConnection(url, "webdb", "webdb");
+		} catch (ClassNotFoundException e) {
+			System.out.println("Class Not Found:" + e);
+		}
 		return conn;
 	}
 }
