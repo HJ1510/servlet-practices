@@ -5,7 +5,6 @@ public class GuestbookVo {
 	private String name;
 	private String password;
 	private String contents;
-//	private Date regDate;
 	private String regDate;
 
 	public void setRegDate(String regDate) {
@@ -53,7 +52,5 @@ public class GuestbookVo {
 		return "Guestbook01Vo [no=" + no + ", name=" + name + ", password=" + password + ", contents=" + contents
 				+ ", regDate=" + regDate + "]";
 	}
-
-
 
 }

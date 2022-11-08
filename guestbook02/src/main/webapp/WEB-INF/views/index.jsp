@@ -4,7 +4,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
-List<GuestbookVo> list = new GuestbookDao().findAll();
+	List<GuestbookVo> list = (List<GuestbookVo>)request.getAttribute("list");
 %>
 <html>
 <head>
@@ -12,7 +12,7 @@ List<GuestbookVo> list = new GuestbookDao().findAll();
 <title>방명록</title>
 </head>
 <body>
-	<form action="add.jsp" method="post">
+	<form action="gb?a=add" method="post">
 		<table border=1 width=500>
 			<tr>
 				<td>이름</td>
@@ -41,7 +41,10 @@ List<GuestbookVo> list = new GuestbookDao().findAll();
 			</td>
 			<td><%=vo.getName()%></td>
 			<td><%=vo.getRegDate()%></td>
-			<td><a href="deleteform.jsp?no=<%=vo.getNo()%>">삭제</a></td>
+			<td><a href="gb?a=deleteform&no=<%=vo.getNo()%>">삭제</a></td>
+			<!-- "gb?a=deleteform&no=<%=vo.getNo()%>"
+				 "gb?a=deleteform?no=<%=vo.getNo()%>" 다름!
+				 "deleteform.jsp?no=<%=vo.getNo() %>" ?의 위치이동 jsp로의 직접 접근xx -->
 		</tr>
 
 		<tr>
