@@ -1,4 +1,4 @@
-package com.bitacademy.guestbook01.dao.test;
+package com.bitacademy.guestbook.dao.test;
 
 public class Guestbook01DaoTest {
 

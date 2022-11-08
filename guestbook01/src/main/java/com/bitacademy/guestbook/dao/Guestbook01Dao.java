@@ -1,4 +1,4 @@
-package com.bitacademy.guestbook01.dao;
+package com.bitacademy.guestbook.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.bitacademy.guestbook01.vo.Guestbook01Vo;
+import com.bitacademy.guestbook.vo.Guestbook01Vo;
 
 public class Guestbook01Dao {
 

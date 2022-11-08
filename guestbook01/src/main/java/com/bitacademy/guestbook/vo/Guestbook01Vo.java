@@ -1,4 +1,4 @@
-package com.bitacademy.guestbook01.vo;
+package com.bitacademy.guestbook.vo;
 
 public class Guestbook01Vo {
 	private int no;

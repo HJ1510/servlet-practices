@@ -1,6 +1,6 @@
 <%@ page import="java.util.List"%>
-<%@page import="com.bitacademy.guestbook01.vo.Guestbook01Vo"%>
-<%@page import="com.bitacademy.guestbook01.dao.Guestbook01Dao"%>
+<%@page import="com.bitacademy.guestbook.vo.Guestbook01Vo"%>
+<%@page import="com.bitacademy.guestbook.dao.Guestbook01Dao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
@@ -31,7 +31,7 @@ List<Guestbook01Vo> list = new Guestbook01Dao().findAll();
 	<br>
 	<%
 	int count = list.size();
-	for (Guestbook01Vo vo : list) {
+		for (Guestbook01Vo vo : list) {
 	%>
 
 	<table width=510 border=1>
