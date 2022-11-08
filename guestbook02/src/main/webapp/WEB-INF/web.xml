@@ -19,4 +19,8 @@
     <servlet-name>GuestbookController</servlet-name>
     <url-pattern>/gb</url-pattern>
   </servlet-mapping>
+    <servlet-mapping>
+    <servlet-name>GuestbookController</servlet-name>
+    <url-pattern></url-pattern>
+  </servlet-mapping>
 </web-app>
