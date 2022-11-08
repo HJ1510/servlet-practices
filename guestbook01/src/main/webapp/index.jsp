@@ -30,30 +30,29 @@ List<Guestbook01Vo> list = new Guestbook01Dao().findAll();
 	</form>
 	<br>
 	<%
-		int count=list.size();
-		for (Guestbook01Vo vo : list) {
-			
+	int count = list.size();
+	for (Guestbook01Vo vo : list) {
 	%>
 
 	<table width=510 border=1>
 
 		<tr>
-			<td>[<%=count-- %>]
+			<td>[<%=count--%>]
 			</td>
 			<td><%=vo.getName()%></td>
-			<td><%=vo.getRegDate() %></td>
-			<td><a href="deleteform.jsp?no=<%=vo.getNo() %>">삭제</a></td>
+			<td><%=vo.getRegDate()%></td>
+			<td><a href="deleteform.jsp?no=<%=vo.getNo()%>">삭제</a></td>
 		</tr>
 
 		<tr>
-			<td colspan=4><%=vo.getContents().replaceAll("\n", "<br>") %></td>
-			<!-- <td colspan=4><%=vo.getContents() %></td> 개행 반영 안됨 -->
+			<td colspan=4><%=vo.getContents().replaceAll("\n", "<br>")%></td>
+			<!-- <td colspan=4vo.getContents()s() %></td> 개행 반영 안됨 -->
 		</tr>
 
 	</table>
 	<br />
 	<%
-		}
+	}
 	%>
 	<br />
 	<br />
