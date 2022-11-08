@@ -10,7 +10,6 @@ import java.util.List;
 
 import com.bitacademy.guestbook01.vo.Guestbook01Vo;
 
-
 public class Guestbook01Dao {
 
 	public List<Guestbook01Vo> findAll() {
@@ -28,7 +27,7 @@ public class Guestbook01Dao {
 			String sql = "select no, name, contents, reg_date  from guestbook order by reg_date desc";
 			pstmt = conn.prepareStatement(sql);
 
-			rs = pstmt.executeQuery(sql);
+			rs = pstmt.executeQuery(); // rs = pstmt.executeQuery(sql); 오류는 안나지만..문법상 없애는게 좋음
 
 			while (rs.next()) {
 
@@ -68,7 +67,6 @@ public class Guestbook01Dao {
 
 		return result;
 	}
-
 
 	public Boolean insert(Guestbook01Vo vo) {
 		boolean result = false;
@@ -115,7 +113,6 @@ public class Guestbook01Dao {
 		return result;
 	}
 
-
 	public Boolean deleteGuestbook(String password, int no) {
 		boolean result = false;
 
@@ -128,11 +125,11 @@ public class Guestbook01Dao {
 			String url = "jdbc:mysql://127.0.0.1:3306/webdb?charset=utf8";
 			conn = DriverManager.getConnection(url, "webdb", "webdb");
 
-			String sql = "delete from guestbook where password = ? and no = ?";
+			String sql = "delete from guestbook where no = ? and password = ?";
 			pstmt = conn.prepareStatement(sql);
 
-			pstmt.setString(1, password);
-			pstmt.setInt(2, no);
+			pstmt.setLong(1, no);
+			pstmt.setString(2, password);
 
 			int count = pstmt.executeUpdate();
 
@@ -156,6 +153,12 @@ public class Guestbook01Dao {
 		}
 		return result;
 
+	}
+	
+	private Connection getConnection() throws SQLException {
+		Connection conn=null;
+		
+		return conn;
 	}
 }
 
