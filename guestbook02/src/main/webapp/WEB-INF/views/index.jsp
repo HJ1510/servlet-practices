@@ -49,7 +49,7 @@
 
 		<tr>
 			<td colspan=4><%=vo.getContents().replaceAll("\n", "<br>")%></td>
-			<!-- <td colspan=4vo.getContents()s() %></td> 개행 반영 안됨 -->
+			<!-- <vo.getContents() 개행 반영 안됨 -->
 		</tr>
 
 	</table>
