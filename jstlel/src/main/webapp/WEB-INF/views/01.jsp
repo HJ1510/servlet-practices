@@ -42,7 +42,7 @@
 	${iVal == 10 && lVal < 1 }<br/>
 	${iVal == 10 || lVal < 1 }<br/>
 	
-	<h4>요청파라미터</h4>
+	<h4>요청파라미터</h4> <!-- url? 뒤에 파라미터로 붙는 값 -->
 	-${param.a }- <br/>
 	-${param.email }- <br/>
 	
