@@ -40,7 +40,7 @@ public class GuestbookController extends HttpServlet {
 			rd.forward(request, response);
 
 		} else if ("delete".equals(action)) {
-			String sno = request.getParameter("no");
+			String sno = request.getParameter("no")	;
 			Long no = Long.parseLong(sno);
 			String password = request.getParameter("password");
 
